@@ -5,7 +5,7 @@
 
     <groupId>com.feinno.exapmle</groupId>
     <artifactId>eureka-server</artifactId>
-    <version>${version}</version>
+    <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>demo-eureka</name>
