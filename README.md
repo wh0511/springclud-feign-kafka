@@ -1,0 +1,6 @@
+
+## Package
+
+```
+mvnw clean package
+```
