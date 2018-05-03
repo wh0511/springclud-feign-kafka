@@ -9,6 +9,7 @@
  */
 package com.feinno.example.service;
 
+import com.feinno.example.service.impl.HelloServiceFailtureImpl;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -18,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * @version 1.0
  * date 2018/5/3上午10:35
  */
-@FeignClient(value = "SERVICE-CLIENT")
+@FeignClient(value = "SERVICE-CLIENT", fallback = HelloServiceFailtureImpl.class)
 public interface HelloService {
     /**
      * ..

@@ -9,6 +9,7 @@
  */
 package com.feinno.example.consumer.controller;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,8 +28,13 @@ public class ConsumerController {
     @LoadBalanced
     private RestTemplate restTemplate;
 
+    @HystrixCommand(fallbackMethod = "serviceFailure")
     @RequestMapping(value = "/hello", method = RequestMethod.GET)
     public String helloController() {
         return restTemplate.getForEntity("http://SERVICE-CLIENT/hello", String.class).getBody();
+    }
+
+    public String serviceFailure() {
+        return "Hello service is not available";
     }
 }

@@ -9,10 +9,15 @@
  */
 package com.feinno.example;
 
+import feign.Feign;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.feign.EnableFeignClients;
+import org.springframework.cloud.netflix.hystrix.EnableHystrix;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
 
 /**
  * @author liyang
@@ -22,8 +27,16 @@ import org.springframework.cloud.netflix.feign.EnableFeignClients;
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableFeignClients
+@EnableHystrix
 public class ServiceFeignApplication {
     public static void main(String[] args) {
         SpringApplication.run(ServiceFeignApplication.class, args);
     }
+
+
+//    @Bean
+//    @Scope("prototype")
+//    public Feign.Builder feignBuilder() {
+//        return Feign.builder();
+//    }
 }
