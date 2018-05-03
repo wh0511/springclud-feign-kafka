@@ -25,8 +25,15 @@
         <spring-cloud.version>Dalston.SR3</spring-cloud.version>
     </properties>
 
-    <dependencies>
+    <repositories>
+        <repository>
+            <id>feinno</id>
+            <name>Feinno Maven Repository</name>
+            <url>http://10.10.202.157:8081/repository/maven-public/</url>
+        </repository>
+    </repositories>
 
+    <dependencies>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-eureka</artifactId>
