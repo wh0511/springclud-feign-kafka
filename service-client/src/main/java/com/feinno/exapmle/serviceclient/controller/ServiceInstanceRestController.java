@@ -17,6 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -32,14 +33,13 @@ public class ServiceInstanceRestController {
     @Autowired
     private DiscoveryClient discoveryClient;
 
-    @GetMapping(value = "/add")
-    public Integer add(@RequestParam Integer a, @RequestParam Integer b) {
-        List<ServiceInstance> instances = discoveryClient.getInstances("compute-service");
-        Integer r = a + b;
+    @RequestMapping(value = "/hello")
+    public String index() {
+        List<ServiceInstance> instances = discoveryClient.getInstances("hello-service");
         for (ServiceInstance instance : instances) {
-            logger.info("/add, host:" + instance.getHost() + ", service_id:" + instance.getServiceId() + ", result:" + r);
+            logger.info("/hello, host:" + instance.getHost() + ", service_id:" + instance.getServiceId());
         }
-        return r;
+        return "Hello World";
     }
 
 }
