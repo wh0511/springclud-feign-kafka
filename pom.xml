@@ -24,5 +24,6 @@
         <module>eureka-server</module>
         <module>service-client</module>
         <module>feign-consumer</module>
+        <module>ribbon-consumer</module>
     </modules>
 </project>
