@@ -9,22 +9,7 @@
         </layout>
     </appender>
 
-    <logger name="com.feinno.example.rabbit.component" additivity="false">
-        <level value="DEBUG"/>
-        <appender-ref ref="console"/>
-    </logger>
-
-    <logger name="com.feinno.example.rabbit.config" additivity="false">
-        <level value="DEBUG"/>
-        <appender-ref ref="console"/>
-    </logger>
-
-    <logger name="com.feinno" additivity="false">
-        <level value="INFO"/>
-        <appender-ref ref="console"/>
-    </logger>
-
-    <logger name="org.springframework" additivity="false">
+    <logger name="com.feinno.example.rabbit" additivity="false">
         <level value="INFO"/>
         <appender-ref ref="console"/>
     </logger>

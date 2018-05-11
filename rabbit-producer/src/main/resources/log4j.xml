@@ -8,22 +8,7 @@
             <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} [%-5p](%-35.35c{1.}:%-3L) %m%n"/>
         </layout>
     </appender>
-
-    <logger name="com.feinno.example" additivity="false">
-        <level value="DEBUG"/>
-        <appender-ref ref="console"/>
-    </logger>
-
-    <logger name="com.feinno.example.consumer" additivity="false">
-        <level value="DEBUG"/>
-        <appender-ref ref="console"/>
-    </logger>
-
-    <logger name="org.springframework" additivity="false">
-        <level value="INFO"/>
-        <appender-ref ref="console"/>
-    </logger>
-
+    
     <logger name="com.feinno.example" additivity="false">
         <level value="INFO"/>
         <appender-ref ref="console"/>
