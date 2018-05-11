@@ -25,5 +25,7 @@
         <module>service-client</module>
         <module>feign-consumer</module>
         <module>ribbon-consumer</module>
+        <module>rabbit-producer</module>
+        <module>rabbit-consumer</module>
     </modules>
 </project>
