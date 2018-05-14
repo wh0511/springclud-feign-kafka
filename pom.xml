@@ -20,6 +20,14 @@
             <url>http://10.10.202.157:8081/repository/maven-public/</url>
         </repository>
     </repositories>
+
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.6.RELEASE</version>
+    </parent>
+
     <modules>
         <module>kafka</module>
         <module>eureka-server</module>
@@ -27,5 +35,9 @@
         <module>feign-consumer</module>
         <module>ribbon-consumer</module>
         <module>kafkaconsumer</module>
+        <module>rabbit-producer</module>
+        <module>rabbit-consumer</module>
+        <module>redis-client</module>
     </modules>
+
 </project>

@@ -1,0 +1,23 @@
+---
+spring:
+  profiles: eureka1                                 # 指定profile=peer1
+server:
+  port: 3030
+eureka:
+  instance:
+    hostname: dp-test-05                               # 指定当profile=dp-test-05时，主机名
+  client:
+    serviceUrl:
+      defaultZone: http://dp-test-06:3030/eureka/      # 将自己注册到peer2这个Eureka上面去
+
+---
+spring:
+  profiles: eureka2
+server:
+  port: 3030
+eureka:
+  instance:
+    hostname: dp-test-06
+  client:
+    serviceUrl:
+      defaultZone: http://dp-test-05:3030/eureka/
