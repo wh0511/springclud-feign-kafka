@@ -11,8 +11,6 @@
 
 package com.feinno.entity;
 
-import java.io.Serializable;
-
 /**
  * @author liupenggc
  * @version 1.1.0
