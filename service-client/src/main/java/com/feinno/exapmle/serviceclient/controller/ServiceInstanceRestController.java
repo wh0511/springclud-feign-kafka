@@ -9,7 +9,9 @@
  */
 package com.feinno.exapmle.serviceclient.controller;
 
+import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -32,6 +34,7 @@ public class ServiceInstanceRestController {
 
     @Autowired
     private DiscoveryClient discoveryClient;
+
 
     @RequestMapping(value = "/hello")
     public String index() {

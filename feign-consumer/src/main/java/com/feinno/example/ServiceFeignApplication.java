@@ -31,9 +31,4 @@ public class ServiceFeignApplication {
     }
 
 
-//    @Bean
-//    @Scope("prototype")
-//    public Feign.Builder feignBuilder() {
-//        return Feign.builder();
-//    }
 }
