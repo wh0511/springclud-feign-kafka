@@ -10,3 +10,4 @@ mvnw clean package
 ```
 nohup java -jar eureka-server-1.0-SNAPSHOT.jar &
 ```
+"# springclud-feign-kafka" 
