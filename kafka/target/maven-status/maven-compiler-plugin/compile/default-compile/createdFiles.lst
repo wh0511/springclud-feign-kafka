@@ -1,7 +1,7 @@
+com\feinno\exapmle\kafka\KafkaController$1.class
 com\feinno\exapmle\kafka\Sender.class
 com\feinno\exapmle\kafka\Receiver.class
 com\feinno\exapmle\kafka\AppStart.class
-com\feinno\exapmle\kafka\KafkaConsumerConfig.class
 com\feinno\exapmle\kafka\Listener.class
 com\feinno\exapmle\kafka\KafkaProducerConfig.class
 com\feinno\exapmle\kafka\KafkaController.class

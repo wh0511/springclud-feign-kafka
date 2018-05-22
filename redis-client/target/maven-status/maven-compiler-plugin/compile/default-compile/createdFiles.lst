@@ -1,5 +1,0 @@
-com\feinno\RedisClientApplication.class
-com\feinno\service\RedisService.class
-com\feinno\entity\User.class
-com\feinno\service\RedisServiceImpl.class
-com\feinno\controller\RedisController.class

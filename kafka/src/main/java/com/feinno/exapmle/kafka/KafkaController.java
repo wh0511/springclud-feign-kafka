@@ -12,6 +12,7 @@ package com.feinno.exapmle.kafka;
 
 
 
+import org.apache.kafka.clients.producer.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Properties;
 
 /**
  * @author wanghang
@@ -48,15 +50,46 @@ public class KafkaController {
             String message = msg;
             //String message = "this is a message for test";
             logger.info("kafka的消息={}", message);
-            kafkaTemplate.send("perftrace",  message);
+            //kafkaTemplate.send("perftrace",  message);
             logger.info("发送kafka成功.");
             map.put("200",message);
+            //源生方式发送消息
+            sendMsg();
             return new ResponseEntity<>(map, HttpStatus.OK);
         } catch (Exception e) {
             logger.error("发送kafka失败", e);
             map.put("500",e);
             return new ResponseEntity<>(map, HttpStatus.EXPECTATION_FAILED);
         }
+    }
+
+    //利用源生kafka发送消息(类org.apache.kafka.clients.producer.KafkaProducer)
+    private void sendMsg(){
+        Properties props = new Properties();
+        props.put("bootstrap.servers", "192.168.156.101:9092");
+        props.put("acks", "all");
+        props.put("retries", 0);
+        props.put("batch.size", 16384);
+        props.put("linger.ms", 1);
+        props.put("buffer.memory", 33554432);
+        props.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
+        props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
+
+        Producer<String, String> producer = new KafkaProducer<>(props);
+        for (int i = 0; i < 100; i++)
+            producer.send(new ProducerRecord<String, String>("perftrace", Integer.toString(i), Integer.toString(i)),new Callback() {
+                // 回调函数
+                @Override
+                public void onCompletion(RecordMetadata metadata, Exception exception) {
+                    if (null != exception) {
+                        logger.error(" Kafka Produce send message error " + exception);
+                        //logger.error(" Kafka Produce send message info: metadata: " + JSON.toJSONString(metadata));
+                        //throw new TengException(SEND_MESSAGE_FAILED_NUM, SEND_MESSAGE_FAILED_MESSAGE + exception.getMessage());
+                    }
+                }
+            });
+
+        producer.close();
     }
 
 //    @RequestMapping(value = "/kafka1",method = RequestMethod.GET)

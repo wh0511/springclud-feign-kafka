@@ -30,14 +30,8 @@
 
     <modules>
         <module>kafka</module>
-        <module>eureka-server</module>
-        <module>service-client</module>
         <module>feign-consumer</module>
-        <module>ribbon-consumer</module>
         <module>kafkaconsumer</module>
-        <module>rabbit-producer</module>
-        <module>rabbit-consumer</module>
-        <module>redis-client</module>
     </modules>
 
 </project>

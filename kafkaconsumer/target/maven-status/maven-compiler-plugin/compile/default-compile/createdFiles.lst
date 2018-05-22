@@ -1,3 +1,4 @@
+kafka\KafkaConsumerBean.class
 kafka\Listener.class
 kafka\AppStart.class
 kafka\KafkaConsumerConfig.class
