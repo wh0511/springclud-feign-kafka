@@ -1,12 +1,3 @@
-/*
- * Copyright(C) 2017-2018 Feinno Tech.ALL Rights Reserved.
- * FileName: HelloController
- * Description: xxxxx
- * History:
- * 版本号    作者    日期    操作
- * 1.0    liyang 2018/5/3   x
- * ...
- */
 package com.feinno.example.controller;
 
 import com.feinno.example.service.HelloService;
@@ -24,11 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Map;
 
-/**
- * @author liyang
- * @version 1.0
- * date 2018/5/3上午10:44
- */
+
 @RestController
 public class HelloController {
     @Autowired

@@ -1,13 +1,3 @@
-/*
- * <p>Copyright: Copyright(C) 2017-2018</p >
- * <p> 公司：北京新媒传信科技有限公司</p >
- * FileName: ${file_name}
- * Description: xxxxx
- * History:
- * 版本号    作者    日期    操作
- * 1.0    ${user} ${date}   x
- * ...
- */
 package com.feinno.exapmle.kafka;
 
 
@@ -27,11 +17,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 
-/**
- * @author wanghang
- * @version 1.0
- * @date 2018/5/11 0011下午 15:57
- */
+
 @RestController
 public class KafkaController {
 
@@ -49,21 +35,21 @@ public class KafkaController {
         try {
             String message = msg;
             //String message = "this is a message for test";
-            logger.info("kafka的消息={}", message);
+            logger.info("kafka'value={}", message);
             //kafkaTemplate.send("perftrace",  message);
-            logger.info("发送kafka成功.");
+            logger.info("send kafka success.");
             map.put("200",message);
-            //源生方式发送消息
+            //Source way
             sendMsg();
             return new ResponseEntity<>(map, HttpStatus.OK);
         } catch (Exception e) {
-            logger.error("发送kafka失败", e);
+            logger.error("send kafka failure", e);
             map.put("500",e);
             return new ResponseEntity<>(map, HttpStatus.EXPECTATION_FAILED);
         }
     }
 
-    //利用源生kafka发送消息(类org.apache.kafka.clients.producer.KafkaProducer)
+    //(org.apache.kafka.clients.producer.KafkaProducer)
     private void sendMsg(){
         Properties props = new Properties();
         props.put("bootstrap.servers", "192.168.156.101:9092");
@@ -78,7 +64,7 @@ public class KafkaController {
         Producer<String, String> producer = new KafkaProducer<>(props);
         for (int i = 0; i < 100; i++)
             producer.send(new ProducerRecord<String, String>("perftrace", Integer.toString(i), Integer.toString(i)),new Callback() {
-                // 回调函数
+                //call method
                 @Override
                 public void onCompletion(RecordMetadata metadata, Exception exception) {
                     if (null != exception) {

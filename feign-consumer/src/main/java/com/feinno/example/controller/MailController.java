@@ -9,11 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- * @author liyang
- * @version 1.0
- * date 2018/5/11下午1:47
- */
 @RestController
 public class MailController {
 

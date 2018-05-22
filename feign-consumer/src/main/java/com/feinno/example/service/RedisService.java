@@ -1,13 +1,4 @@
-package com.feinno.example.service;/*
- * <p>Copyright: Copyright(C) 2017-2018</p >
- * <p> 公司：北京新媒传信科技有限公司</p >
- * FileName: ${file_name}
- * Description: xxxxx
- * History:
- * 版本号    作者       日期      操作
- * 1.2.0    liupenggc 2018-05-11    x
- * ...
- */
+package com.feinno.example.service;
 
 import com.feinno.example.service.impl.RedisServiceImpl;
 import org.springframework.cloud.netflix.feign.FeignClient;
